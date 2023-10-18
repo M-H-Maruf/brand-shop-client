@@ -10,7 +10,7 @@ const Brands = () => {
   }, []);
 
   return (
-    <div id="Brands" className="tracking-tight py-32 space-y-10">
+    <div data-aos="zoom-in" id="Brands" className="tracking-tight py-32 space-y-10 bg-white p-32 rounded-2xl my-32">
       <h1
         data-aos="fade-right"
         className="font-teko font-bold text-brand-primary text-5xl aos-init aos-animate"
@@ -22,7 +22,7 @@ const Brands = () => {
           <div
             key={brand.id}
             data-aos="flip-left"
-            className="w-72 pb-4 flex flex-col justify-between bg-black/10 shadow-2xl rounded-lg tracking-tight"
+            className="max-w-[288px] pb-4 flex flex-col justify-between bg-black/10 shadow-2xl rounded-lg tracking-tight"
           >
             <div className="flex justify-center items-center p-4 rounded-t-lg bg-black/10 h-60">
               <img

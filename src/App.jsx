@@ -18,7 +18,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="font-mukta tracking-widest relative">
+    <div className="font-mukta tracking-widest relative bg-black/10">
       {/* navbar */}
       <Navbar></Navbar>
 
