@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Particle from "../home/Particle";
 
 const AddProduct = () => {
   const handleAddProduct = () => {};
@@ -7,7 +8,7 @@ const AddProduct = () => {
       <Helmet>
         <title>Nexus | Add Product</title>
       </Helmet>
-      <div className="py-32 p-6">
+      <div className="py-32 p-6 z-10">
         <div className="max-w-6xl mx-auto">
           <h1
             data-aos="fade-down"
@@ -27,7 +28,7 @@ const AddProduct = () => {
                     <input
                       type="text"
                       placeholder="Product Image URL"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -37,7 +38,7 @@ const AddProduct = () => {
                     <input
                       type="text"
                       placeholder="Product Name"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -47,7 +48,7 @@ const AddProduct = () => {
                     <input
                       type="text"
                       placeholder="Product Brand Name"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -57,7 +58,7 @@ const AddProduct = () => {
                     <input
                       type="text"
                       placeholder="Product Type"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -67,7 +68,7 @@ const AddProduct = () => {
                     <input
                       type="text"
                       placeholder="Product Price In USD"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -77,7 +78,7 @@ const AddProduct = () => {
                     <input
                       type="text"
                       placeholder="Product Short Description"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -87,7 +88,7 @@ const AddProduct = () => {
                     <input
                       type="text"
                       placeholder="Product Rating"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -97,7 +98,7 @@ const AddProduct = () => {
                     <input
                       type="text"
                       placeholder="Product Details"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -111,6 +112,7 @@ const AddProduct = () => {
           </div>
         </div>
       </div>
+      <Particle></Particle>
     </div>
   );
 };

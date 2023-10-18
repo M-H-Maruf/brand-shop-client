@@ -3,6 +3,7 @@ import Register from './Register';
 import { useState } from "react";
 import Login from './Login';
 import { BsGoogle } from "react-icons/bs";
+import Particle from "../home/Particle";
 
 const Auth = () => {
   const [tabIndex, setTabIndex] = useState(1);
@@ -14,7 +15,7 @@ const Auth = () => {
       <Helmet>
         <title>Nexus | Authentication</title>
       </Helmet>
-      <div className="py-32">
+      <div className="py-32 z-10">
         <div className="max-w-6xl mx-auto">
           <h1
             data-aos="fade-down"
@@ -34,14 +35,15 @@ const Auth = () => {
               <div className="divider before:bg-white after:bg-white">OR</div>
           <button
             
-            className="btn w-full glass group text-white hover:text-event-secondary"
+            className="btn w-full glass group text-white hover:text-brand-primary"
           >
             Continue With Google
-            <BsGoogle className="px-1 group-hover:text-event-secondary text-white w-10"></BsGoogle>
+            <BsGoogle className="px-1 group-hover:text-brand-primary text-white w-10"></BsGoogle>
           </button>
           </div>
         </div>
       </div>
+      <Particle></Particle>
     </div>
   );
 };

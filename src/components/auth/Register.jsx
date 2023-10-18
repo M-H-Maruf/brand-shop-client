@@ -10,7 +10,7 @@ const Register = () => {
                     <input
                       type="text"
                       placeholder="Your Image URL"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -20,7 +20,7 @@ const Register = () => {
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -30,7 +30,7 @@ const Register = () => {
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>
@@ -40,7 +40,7 @@ const Register = () => {
                     <input
                       type="text"
                       placeholder="Your Password"
-                      className="input input-bordered w-full"
+                      className="input input-bordered text-brand-primary w-full"
                     />
                   </label>
                 </div>

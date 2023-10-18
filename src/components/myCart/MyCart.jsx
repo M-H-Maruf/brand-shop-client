@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Particle from "../home/Particle";
 
 const MyCart = () => {
   return (
@@ -6,7 +7,7 @@ const MyCart = () => {
       <Helmet>
         <title>Nexus | My Cart</title>
       </Helmet>
-      <div className="py-32 p-6">
+      <div className="py-32 p-6 z-10">
         <div className="max-w-6xl mx-auto">
           <h1
             data-aos="fade-down"
@@ -22,6 +23,7 @@ const MyCart = () => {
           </div>
         </div>
       </div>
+      <Particle></Particle>
     </div>
   );
 };

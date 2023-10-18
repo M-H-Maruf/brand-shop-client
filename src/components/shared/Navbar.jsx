@@ -72,14 +72,13 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end flex gap-2 lg:gap-6">
-        <div className="btn glass group">
-          <Link
-            className="text-white opacity-80 group-hover:text-brand-primary"
+          <Link className="group"
             to="/auth"
           >
+        <div className="btn glass text-white opacity-80 group-hover:text-brand-primary group-hover:bg-white">
             LOG IN / REGISTER
-          </Link>
         </div>
+          </Link>
       </div>
     </div>
   );
