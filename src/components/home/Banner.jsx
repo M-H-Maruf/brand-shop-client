@@ -1,17 +1,17 @@
 import Particle from "./Particle";
 import { BsFillArrowDownCircleFill } from "react-icons/bs";
-import SideNav from "./SideNav";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+
 
 const Banner = () => {
   return (
     <div className="w-full h-screen overflow-hidden relative">
       <div className="h-full w-full bg-black bg-opacity-50 -z-10"></div>
-      <SideNav></SideNav>
+
       <Link to="Brands" spy={true} smooth={true}>
         <motion.span
-          className="z-[100] absolute bottom-14 left-1/2 -translate-x-1/2 text-white/80 text-4xl hover:text-brand-primary"
+          className="z-10 absolute bottom-14 left-1/2 -translate-x-1/2 text-white/80 text-4xl hover:text-brand-primary"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2, type: "elastic" }}
         >

@@ -5,7 +5,7 @@ import "react-tabs/style/react-tabs.css";
 const Testimonials = () => {
   return (
     <div className="w-screen flex justify-center items-center">
-      <div className="h-full w-full bg-black bg-opacity-80 flex justify-center items-center ">
+      <div className="h-full w-full bg-black bg-opacity-80 flex justify-center items-center  pb-28">
         {" "}
         <div
           id="Testimonials"

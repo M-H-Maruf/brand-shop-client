@@ -10,7 +10,7 @@ const Brands = () => {
   }, []);
 
   return (
-    <div data-aos="zoom-in" id="Brands" className="tracking-tight py-32 space-y-10 bg-white p-32 rounded-2xl my-32">
+    <div data-aos="zoom-in" className="tracking-tight md:py-32 space-y-10 bg-white lg:p-32 py-16 px-4 rounded-2xl my-32">
       <h1
         data-aos="fade-right"
         className="font-teko font-bold text-brand-primary text-5xl aos-init aos-animate"

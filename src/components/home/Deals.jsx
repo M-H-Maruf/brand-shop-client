@@ -25,14 +25,14 @@ const Deals = () => {
     }
   };
   return (
-    <div id="Deals" className="w-full">
+    <div id="Deals" className="p-6">
       <h1
         data-aos="fade-right"
-        className="aos-init w-full my-6 px-32 aos-animate font-teko font-bold text-brand-primary text-5xl aos-init aos-animate mt-32 text-left"
+        className="aos-init w-full my-6 lg:px-32 aos-animate font-teko font-bold text-brand-primary text-5xl aos-init aos-animate mt-32 text-left"
       >
         BEST DEALS
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-6 tracking-tight mx-32">
+      <div className="flex flex-col md:flex-row items-center gap-6 tracking-tight lg:mx-32">
         <div data-aos="fade-up" className="flex flex-col justify-center">
           <h1 className="font-teko tracking-tighter text-xl font-semibold">
             Welcome to NEXUS.
@@ -51,8 +51,8 @@ const Deals = () => {
           </Link>
         </div>
         <div
-          data-aos="fade-left"
-          className="flex flex-col justify-center md:justify-normal py-10 pb-52 items-center h-full"
+          data-aos="flip-down"
+          className="flex flex-col justify-center py-10 pb-52 items-center md:h-full"
         >
           <h1 className="font-teko tracking-tighter text-xl font-semibold">
             Time Remaining Till Offer Ends
