@@ -31,7 +31,7 @@ const Navbar = () => {
   );
 
   return (
-    <div data-aos="fade-down" className="navbar bg-black px-4">
+    <div data-aos="fade-down" className="navbar bg-black px-4 fixed z-50">
       <div className="navbar-start">
         <details className="dropdown duration-200 lg:hidden">
           <summary className="m-1 btn glass group">
