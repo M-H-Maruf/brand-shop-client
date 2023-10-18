@@ -25,40 +25,40 @@ const Deals = () => {
     }
   };
   return (
-    <div
-      id="Deals"
-      className="grid grid-cols-1 md:grid-cols-2 items-start gap-6 tracking-tight pt-32"
-    >
+    <div id="Deals" className="w-full">
       <h1
         data-aos="fade-right"
-        className="font-teko font-bold text-event-text text-4xl aos-init aos-animate md:col-span-2 col-span-1"
+        className="aos-init w-full my-6 px-32 aos-animate font-teko font-bold text-brand-primary text-5xl aos-init aos-animate mt-32 text-left"
       >
         BEST DEALS
       </h1>
-      <div data-aos="fade-up" className="flex flex-col justify-center">
-        <h1 className="font-teko tracking-tighter text-xl font-semibold">
-          Welcome to AZTEC
-        </h1>
-        <h2 className="font-teko">Sign up today to get the best deals!</h2>
-        <ul className="list-disc list-inside">
-          <li>Best deals on the market.</li>
-          <li>People's trusted companion since 1992.</li>
-          <li>Exclusive offer's for members of the community.</li>
-        </ul>
-        <Link>
-          <button className="btn btn-outline btn-accent font-bold my-4">
-            SIGN UP
-          </button>
-        </Link>
-      </div>
-      <div
-        data-aos="fade-left"
-        className="flex flex-col justify-center md:justify-normal py-10 pb-52 items-center h-full"
-      >
-        <h1 className="font-teko tracking-tighter text-xl font-semibold">
-          Time Remaining Till Offer Ends
-        </h1>
-        <Countdown date={Date.now() + 86400000} renderer={renderer} />
+      <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-6 tracking-tight mx-32">
+        <div data-aos="fade-up" className="flex flex-col justify-center">
+          <h1 className="font-teko tracking-tighter text-xl font-semibold">
+            Welcome to NEXUS.
+          </h1>
+          <h2 className="font-teko">Join us today to get the best deals!</h2>
+          <ul className="list-disc list-inside">
+            <li>Best deals on the market.</li>
+            <li>People's trusted companion since 1992.</li>
+            <li>Exclusive offer's for members of the community.</li>
+            <li>Get 80% off on first purchase.</li>
+          </ul>
+          <Link to="/auth">
+            <button className="btn border-2 bg-transparent font-bold my-4 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white">
+              LOG IN / REGISTER
+            </button>
+          </Link>
+        </div>
+        <div
+          data-aos="fade-left"
+          className="flex flex-col justify-center md:justify-normal py-10 pb-52 items-center h-full"
+        >
+          <h1 className="font-teko tracking-tighter text-xl font-semibold">
+            Time Remaining Till Offer Ends
+          </h1>
+          <Countdown date={Date.now() + 86400000} renderer={renderer} />
+        </div>
       </div>
     </div>
   );

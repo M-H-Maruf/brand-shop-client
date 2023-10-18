@@ -6,7 +6,7 @@ const Footer = () => {
     <div  data-aos="fade-up">
       <footer className="footer p-10 bg-[#0c0c0c] text-white">
         <aside className="flex flex-col gap-5">
-          <Link spy={true} smooth={true} to="Banner"><img className="h-24 w-24 bg-brand-primary rounded-full" src="/logo.svg" alt="logo" /></Link>
+          <Link spy={true} smooth={true} to="Banner"><img className="h-24 cursor-pointer w-24 bg-brand-primary rounded-full" src="/logo.svg" alt="logo" /></Link>
           <p>
             NEXUS Ltd.
             <br />

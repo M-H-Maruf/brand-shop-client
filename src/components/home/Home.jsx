@@ -35,7 +35,7 @@ const Home = () => {
       </div>
 
       {/* main section */}
-      <div className="max-w-7xl flex flex-col justify-center items-center mx-auto">
+      <div  id="Brands" className="max-w-7xl flex flex-col justify-center items-center mx-auto">
         {/* brands */}
         <Brands></Brands>
 

@@ -14,7 +14,7 @@ const Testimonials = () => {
           <div className="text-white">
             <h1
               data-aos="fade-right"
-              className="aos-init aos-animate md:col-span-2 col-span-1 font-teko font-bold text-brand-primary text-5xl aos-init aos-animate"
+              className="aos-init aos-animate font-teko font-bold text-brand-primary text-5xl aos-init aos-animate"
             >
               TESTIMONIALS
             </h1>{" "}
