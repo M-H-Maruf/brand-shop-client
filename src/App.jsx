@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Navbar from "./components/shared/Navbar";
 import { HelmetProvider } from "react-helmet-async";
+import Footer from './components/shared/Footer';
 
 const App = () => {
   // initializing aos
@@ -25,6 +26,9 @@ const App = () => {
       <HelmetProvider>
         <Outlet></Outlet>
       </HelmetProvider>
+
+      {/* footer */}
+      <Footer></Footer>
     </div>
   );
 };

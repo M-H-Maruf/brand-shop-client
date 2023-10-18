@@ -4,14 +4,6 @@ import BannerText from "./BannerText";
 import { Background, Parallax } from "react-parallax";
 
 const Home = () => {
-  const insideStyles = {
-    background: "white",
-    padding: 20,
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%,-50%)",
-  };
   return (
     <div>
       {/* dynamic title */}
@@ -20,7 +12,10 @@ const Home = () => {
       </Helmet>
 
       {/* parallax banner */}
-      <div className="relative top-0 left-0 right-0 overflow-hidden">
+      <div
+        className="relative top-0 left-0 right-0 overflow-hidden"
+        id="Banner"
+      >
         <Parallax strength={500} bgClassName="bg-contain bg-center">
           <Background className="custom-bg object-cover w-screen">
             <img
@@ -29,16 +24,12 @@ const Home = () => {
               alt="fill murray"
             />
           </Background>
-          <div
-            id="Banner"
-            className="relative h-screen w-full flex flex-col justify-center items-center"
-          >
+          <div className="relative h-screen w-full flex flex-col justify-center items-center">
             <Banner></Banner>
             <BannerText></BannerText>
           </div>
         </Parallax>
       </div>
-
     </div>
   );
 };
