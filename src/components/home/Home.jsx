@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import BannerText from "./BannerText";
 import { Background, Parallax } from "react-parallax";
+import Brands from "./Brands";
 
 const Home = () => {
   return (
@@ -29,6 +30,12 @@ const Home = () => {
             <BannerText></BannerText>
           </div>
         </Parallax>
+      </div>
+
+      {/* main section */}
+      <div className="max-w-7xl flex flex-col justify-center items-center mx-auto">
+        {/* brands */}
+        <Brands></Brands>
       </div>
     </div>
   );

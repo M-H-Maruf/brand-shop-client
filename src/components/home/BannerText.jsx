@@ -36,7 +36,7 @@ const BannerText = () => {
       </div>
       <p
         data-aos="fade-up-left"
-        className="w-80 text-white opacity-60 font-medium text-center"
+        className="w-80 text-white opacity-60 mt-4 font-medium text-center"
       >
        Welcome to Nexus, your destination for top-tier tech. We bring you curated products from industry giants like Google, Apple, Samsung, Sony, Intel, and Microsoft. Explore cutting-edge devices, from smartphones to smart home solutions. Experience the future with Nexus, where leading brands converge for you.
       </p>
