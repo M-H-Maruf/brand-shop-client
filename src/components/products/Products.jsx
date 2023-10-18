@@ -6,7 +6,7 @@ const Products = () => {
       <Helmet>
         <title>Nexus | Products</title>
       </Helmet>
-      This is porducts
+      This is products
     </div>
   );
 };
