@@ -53,7 +53,7 @@ const Home = () => {
             <Background className="custom-bg object-cover w-screen">
               <img
                 className="object-cover object-center h-screen w-screen"
-                src="https://i.ibb.co/k6PYJkr/Brand-banner.jpg"
+                src="https://i.ibb.co/qWNH5fN/Alexandre-debieve-FO7-JIlwj-Ot-U-unsplash.jpg"
                 alt="fill murray"
               />
             </Background>
