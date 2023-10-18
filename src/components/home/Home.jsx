@@ -6,7 +6,9 @@ const Home = () => {
       <Helmet>
         <title>Nexus | Home</title>
       </Helmet>
-      This is home
+      <div className="relative top-0 left-0 right-0 overflow-hidden">
+        this is home
+      </div>
     </div>
   );
 };

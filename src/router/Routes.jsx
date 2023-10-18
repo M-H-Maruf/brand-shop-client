@@ -20,7 +20,7 @@ const routes = createBrowserRouter([
         element: <MyCart></MyCart>,
       },
       {
-        path: "/products",
+        path: "/products/:brand",
         element: <Products></Products>,
       },
       {

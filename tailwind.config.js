@@ -5,7 +5,16 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'teko': ['Teko', 'sans-serif'],
+      'mukta': ['Mukta', 'sans-serif'],
+      'orbitron': ['Orbitron', 'sans-serif'],
+    },
+    extend: {
+      colors: {
+        "brand-primary": "#C9A482",
+      },
+    },
   },
   plugins: [require("daisyui")],
 }
