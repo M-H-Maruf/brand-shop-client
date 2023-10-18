@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
 import { motion } from 'framer-motion';
+import { Divide as Hamburger } from 'hamburger-react'
 
 const Navbar = () => {
   // active route styling
@@ -43,8 +43,8 @@ const Navbar = () => {
     <div data-aos="fade-down" className="navbar bg-black/50 px-4 fixed z-50">
       <div className="navbar-start">
         <details className="dropdown duration-200 lg:hidden">
-          <summary className="m-1 btn glass group" onClick={() => setIsOpen((isOpen) => !isOpen)}>
-            <GiHamburgerMenu className="text-2xl text-white opacity-80 group-hover:text-black"></GiHamburgerMenu>
+          <summary className="m-1 btn glass group p-0 hover:bg-white/40" onClick={() => setIsOpen((isOpen) => !isOpen)}>
+          <Hamburger toggled={isOpen} size={25} color="#d0d0d0" />
           </summary>
           <motion.ul
             animate={isOpen ? "open" : "closed"}
