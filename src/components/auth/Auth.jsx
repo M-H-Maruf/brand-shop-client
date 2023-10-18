@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Register from './Register';
 import { useState } from "react";
 import Login from './Login';
+import { BsGoogle } from "react-icons/bs";
 
 const Auth = () => {
   const [tabIndex, setTabIndex] = useState(1);
@@ -23,13 +24,21 @@ const Auth = () => {
           </h1>
           <div
             data-aos="zoom-in"
-            className="bg-black/50 max-w-5xl m-8 md:m-24 p-6 md:p-10 min-h-[600px]"
+            className="bg-black/50 max-w-5xl m-8 md:m-24 p-6 md:p-10 min-h-[650px]"
           >
             <div className="w-full grid grid-cols-2 border-b-2 border-black/50">
               <div onClick={()=>setTabIndex(1)} className={`p-4 w-full flex justify-center items-center text-3xl font-teko tracking-wide ${tabLogInStyle}`}>Log in</div>
               <div onClick={()=>setTabIndex(0)} className={`p-4 w-full flex justify-center items-center text-3xl font-teko tracking-wide ${tabRegisterStyle}`}>Register</div>
             </div>
               {tabIndex?<Login></Login>:<Register></Register>}
+              <div className="divider before:bg-white after:bg-white">OR</div>
+          <button
+            
+            className="btn w-full glass group text-white hover:text-event-secondary"
+          >
+            Continue With Google
+            <BsGoogle className="px-1 group-hover:text-event-secondary text-white w-10"></BsGoogle>
+          </button>
           </div>
         </div>
       </div>
