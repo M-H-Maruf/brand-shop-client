@@ -4,6 +4,7 @@ import Home from "../components/home/Home";
 import MyCart from "../components/myCart/MyCart";
 import Products from "../components/products/Products";
 import Auth from './../components/auth/Auth';
+import AddProduct from './../components/products/AddProduct';
 
 const routes = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const routes = createBrowserRouter([
       {
         path: "/products",
         element: <Products></Products>,
+      },
+      {
+        path: "/add-product",
+        element: <AddProduct></AddProduct>,
       },
       {
         path: "/auth",
