@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   // active route styling
@@ -30,16 +32,27 @@ const Navbar = () => {
     </div>
   );
 
+  // menu animation
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+  };
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div data-aos="fade-down" className="navbar bg-black/50 px-4 fixed z-50">
       <div className="navbar-start">
         <details className="dropdown duration-200 lg:hidden">
-          <summary className="m-1 btn glass group">
+          <summary className="m-1 btn glass group" onClick={() => setIsOpen((isOpen) => !isOpen)}>
             <GiHamburgerMenu className="text-2xl text-white opacity-80 group-hover:text-black"></GiHamburgerMenu>
           </summary>
-          <ul className="p-2 shadow menu dropdown-content z-[1] bg-black w-52">
+          <motion.ul
+            animate={isOpen ? "open" : "closed"}
+            variants={variants}
+            className="p-4 -ml-4 my-2 h-screen overflow-hidden shadow-2xl menu dropdown-content z-[1] bg-black/95 w-72"
+          >
             {navLinks}
-          </ul>
+          </motion.ul>
         </details>
         <div className="flex justify-center items-center px-4 gap-2">
           <img
@@ -47,7 +60,10 @@ const Navbar = () => {
             src="./logo.svg"
             alt="logo"
           />
-          <Link to='/' className="btn btn-ghost text-white opacity-80 normal-case text-xl font-orbitron tracking-widest px-2">
+          <Link
+            to="/"
+            className="btn btn-ghost text-white opacity-80 normal-case text-xl font-orbitron tracking-widest px-2"
+          >
             NE<span className="text-brand-primary">X</span>US
           </Link>
         </div>
