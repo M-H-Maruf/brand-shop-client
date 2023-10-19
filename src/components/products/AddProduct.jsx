@@ -1,10 +1,63 @@
 import { Helmet } from "react-helmet-async";
 import Particle from "../home/Particle";
+import Swal from "sweetalert2";
 
 const AddProduct = () => {
-  const handleAddProduct = () => {
-    
-  }
+  const handleAddProduct = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const image = form.image.value;
+    const name = form.name.value;
+    const brand = form.brand.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const description = form.description.value;
+    const rating = form.rating.value;
+    const details = form.details.value;
+
+    const newProduct = {
+      image,
+      name,
+      brand,
+      type,
+      price,
+      description,
+      rating,
+      details,
+    };
+
+    fetch(
+      "http://localhost:5000/add-product",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product Added Successfully!",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }
+        else {
+          Swal.fire({
+            title: "Error!",
+            text: "Failed To Add Product!",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+      });
+  };
   return (
     <div className=" bg-black/80 bg-[url('https://i.ibb.co/qWNH5fN/Alexandre-debieve-FO7-JIlwj-Ot-U-unsplash.jpg')] bg-cover bg-center bg-blend-darken text-white flex flex-col justify-center items-center tracking-normal text-justify">
       <Helmet>
@@ -28,6 +81,7 @@ const AddProduct = () => {
                   <label className="input-group">
                     <span className="bg-brand-primary w-44">Image</span>
                     <input
+                      name="image"
                       type="text"
                       placeholder="Product Image URL"
                       className="input input-bordered text-brand-primary w-full"
@@ -38,6 +92,7 @@ const AddProduct = () => {
                   <label className="input-group">
                     <span className="bg-brand-primary w-44">Name</span>
                     <input
+                      name="name"
                       type="text"
                       placeholder="Product Name"
                       className="input input-bordered text-brand-primary w-full"
@@ -48,6 +103,7 @@ const AddProduct = () => {
                   <label className="input-group">
                     <span className="bg-brand-primary w-44">Brand</span>
                     <input
+                      name="brand"
                       type="text"
                       placeholder="Product Brand Name"
                       className="input input-bordered text-brand-primary w-full"
@@ -58,6 +114,7 @@ const AddProduct = () => {
                   <label className="input-group">
                     <span className="bg-brand-primary w-44">Type</span>
                     <input
+                      name="type"
                       type="text"
                       placeholder="Product Type"
                       className="input input-bordered text-brand-primary w-full"
@@ -68,6 +125,7 @@ const AddProduct = () => {
                   <label className="input-group">
                     <span className="bg-brand-primary w-44">Price</span>
                     <input
+                      name="price"
                       type="text"
                       placeholder="Product Price In USD"
                       className="input input-bordered text-brand-primary w-full"
@@ -78,6 +136,7 @@ const AddProduct = () => {
                   <label className="input-group">
                     <span className="bg-brand-primary w-44">Description</span>
                     <input
+                      name="description"
                       type="text"
                       placeholder="Product Short Description"
                       className="input input-bordered text-brand-primary w-full"
@@ -88,6 +147,7 @@ const AddProduct = () => {
                   <label className="input-group">
                     <span className="bg-brand-primary w-44">Rating</span>
                     <input
+                      name="rating"
                       type="text"
                       placeholder="Product Rating"
                       className="input input-bordered text-brand-primary w-full"
@@ -98,6 +158,7 @@ const AddProduct = () => {
                   <label className="input-group">
                     <span className="bg-brand-primary w-44">Details</span>
                     <input
+                      name="details"
                       type="text"
                       placeholder="Product Details"
                       className="input input-bordered text-brand-primary w-full"
