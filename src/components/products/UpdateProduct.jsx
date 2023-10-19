@@ -33,7 +33,7 @@ const UpdateProduct = () => {
         };
     
         fetch(
-          `https://brand-shop-server-gqpwum8nl-m-h-marufs-projects.vercel.app/update-product/${_id}`,
+          `https://brand-shop-server-clct6vnxo-m-h-marufs-projects.vercel.app/update-product/${_id}`,
           {
             method: "PUT",
             headers: {

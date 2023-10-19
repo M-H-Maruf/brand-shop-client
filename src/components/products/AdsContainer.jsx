@@ -5,7 +5,7 @@ const AdsContainer = () => {
   // retrieving brands data from database
   const [ads, setAds] = useState([]);
   useEffect(() => {
-    fetch("https://brand-shop-server-gqpwum8nl-m-h-marufs-projects.vercel.app/ads")
+    fetch("https://brand-shop-server-clct6vnxo-m-h-marufs-projects.vercel.app/ads")
       .then((res) => res.json())
       .then((data) => setAds(data));
   }, []);

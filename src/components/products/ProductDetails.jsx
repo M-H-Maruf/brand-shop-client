@@ -12,7 +12,7 @@ const ProductDetails = () => {
   // retrieving brands data from database
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch(`https://brand-shop-server-gqpwum8nl-m-h-marufs-projects.vercel.app/product-details/${_id}`)
+    fetch(`https://brand-shop-server-clct6vnxo-m-h-marufs-projects.vercel.app/product-details/${_id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -32,7 +32,7 @@ const ProductDetails = () => {
       details,
     };
 
-    fetch("https://brand-shop-server-gqpwum8nl-m-h-marufs-projects.vercel.app/add-to-cart/", {
+    fetch("https://brand-shop-server-clct6vnxo-m-h-marufs-projects.vercel.app/add-to-cart/", {
       method: "POST",
       headers: {
         "content-type": "application/json",

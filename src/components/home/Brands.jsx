@@ -6,7 +6,7 @@ const Brands = () => {
   // retrieving brands data from database
   const [brands, setBrands] = useState([]);
   useEffect(() => {
-    fetch("https://brand-shop-server-gqpwum8nl-m-h-marufs-projects.vercel.app/brands")
+    fetch("https://brand-shop-server-clct6vnxo-m-h-marufs-projects.vercel.app/brands")
       .then((res) => res.json())
       .then((data) => setBrands(data));
   }, []);
