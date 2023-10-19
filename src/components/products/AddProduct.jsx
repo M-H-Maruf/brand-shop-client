@@ -40,7 +40,15 @@ const AddProduct = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        if (data.insertedId > 0) {
+          form.image.value = '';
+          form.name.value = '';
+          form.brand.value = '';
+          form.type.value = '';
+          form.price.value = '';
+          form.description.value = '';
+          form.rating.value = '';
+          form.details.value = '';
           Swal.fire({
             title: "Success!",
             text: "Product Added Successfully!",
