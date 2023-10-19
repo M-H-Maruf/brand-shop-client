@@ -1,9 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import { useContext } from "react";
 import Countdown from "react-countdown";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Deals = () => {
+  const {isDarkMode} = useContext(AuthContext);
   const Completionist = () => (
     <span className="font-teko tracking-tighter text-lg font-semibold">
       Too Bad! <br /> Better luck Next Time!!!
@@ -32,9 +35,9 @@ const Deals = () => {
       >
         BEST DEALS
       </h1>
-      <div className="flex flex-col md:flex-row items-center gap-6 tracking-tight lg:mx-32">
+      <div className={`flex flex-col md:flex-row items-center gap-6 tracking-tight lg:mx-32 ${isDarkMode?"text-white/90":""}`}>
         <div data-aos="fade-up" className="flex flex-col justify-center">
-          <h1 className="font-teko tracking-tighter text-xl font-semibold">
+          <h1 className="font-teko tracking-wider text-xl font-semibold">
             Welcome to NEXUS.
           </h1>
           <h2 className="font-teko">Join us today to get the best deals!</h2>

@@ -2,12 +2,14 @@ import { Outlet } from "react-router-dom";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Navbar from "./components/shared/Navbar";
 import { HelmetProvider } from "react-helmet-async";
 import Footer from './components/shared/Footer';
+import { AuthContext } from "./providers/AuthProvider";
 
 const App = () => {
+  const {isDarkMode} = useContext(AuthContext)
   // initializing aos
   useEffect(() => {
     Aos.init({
@@ -18,7 +20,8 @@ const App = () => {
   }, []);
 
   return (
-    <div className="font-mukta tracking-widest relative bg-black/10">
+    <div className={`font-mukta tracking-widest relative ${isDarkMode?"bg-black/95":"bg-black/10"}`}>
+      {console.log(isDarkMode)}
       {/* navbar */}
       <Navbar></Navbar>
 

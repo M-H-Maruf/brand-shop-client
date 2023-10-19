@@ -29,7 +29,7 @@ const AddProduct = () => {
     };
 
     fetch(
-      "https://brand-shop-server-clct6vnxo-m-h-marufs-projects.vercel.app/add-product",
+      "http://localhost:5000/add-product",
       {
         method: "POST",
         headers: {

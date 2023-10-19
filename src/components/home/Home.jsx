@@ -6,8 +6,14 @@ import Brands from "./Brands";
 import Testimonials from "./Testimonials";
 import Deals from "./Deals";
 import SideNav from './SideNav';
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Home = () => {
+  const {
+    isDarkMode,
+  } = useContext(AuthContext);
+  console.log(isDarkMode);
   return (
     <div className="-z-10">
       {/* dynamic title */}
@@ -39,7 +45,7 @@ const Home = () => {
       {/* main section */}
       <div
         id="Brands"
-        className="max-w-7xl flex flex-col justify-center items-center mx-auto px-4"
+        className={"max-w-7xl flex flex-col justify-center items-center mx-auto px-4"}
       >
         {/* brands */}
         <Brands></Brands>

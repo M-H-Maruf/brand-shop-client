@@ -6,19 +6,18 @@ import { BsGoogle } from "react-icons/bs";
 import Particle from "../home/Particle";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
   const [tabIndex, setTabIndex] = useState(1);
   const tabLogInStyle = tabIndex?"bg-brand-primary":"text-brand-primary";
   const tabRegisterStyle = tabIndex?"text-brand-primary":"bg-brand-primary";
-  const {
-    signInWithGoogle,
-  } = useContext(AuthContext);
+  const {signInWithGoogle} = useContext(AuthContext);
+  const navigate = useNavigate()
   
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then(() => {
+      .then((result) => {
         Swal.fire({
           position: "bottom-end",
           icon: "success",
@@ -27,8 +26,8 @@ const Auth = () => {
           showConfirmButton: false,
           timer: 2500,
         });
-        
-        Navigate(location?.state ? location.state : '/');
+        console.log(result);
+        navigate(location?.state ? location.state : '/');
         
       })
       .catch((error) => {
