@@ -1,14 +1,49 @@
 import { Helmet } from "react-helmet-async";
 import Register from './Register';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Login from './Login';
 import { BsGoogle } from "react-icons/bs";
 import Particle from "../home/Particle";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import { Navigate } from "react-router-dom";
 
 const Auth = () => {
   const [tabIndex, setTabIndex] = useState(1);
   const tabLogInStyle = tabIndex?"bg-brand-primary":"text-brand-primary";
   const tabRegisterStyle = tabIndex?"text-brand-primary":"bg-brand-primary";
+  const {
+    signInWithGoogle,
+  } = useContext(AuthContext);
+  
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then(() => {
+        Swal.fire({
+          position: "bottom-end",
+          icon: "success",
+          title: "Success!",
+          text: "Sign Up Succeeded With Google",
+          showConfirmButton: false,
+          timer: 2500,
+        });
+        
+        Navigate(location?.state ? location.state : '/');
+        
+      })
+      .catch((error) => {
+        console.log(error);
+        Swal.fire({
+          position: "bottom-end",
+          icon: "error",
+          title: "Error!",
+          text: "Oops! Something went wrong",
+          showConfirmButton: false,
+          timer: 2500,
+        });
+        
+      });
+  };
 
   return (
     <div className=" bg-black/80 bg-[url('https://i.ibb.co/qWNH5fN/Alexandre-debieve-FO7-JIlwj-Ot-U-unsplash.jpg')] bg-cover bg-center bg-blend-darken text-white flex flex-col justify-center items-center tracking-normal text-justify">
@@ -34,7 +69,7 @@ const Auth = () => {
               {tabIndex?<Login></Login>:<Register setTabIndex={setTabIndex}></Register>}
               <div className="divider before:bg-white after:bg-white">OR</div>
           <button
-            
+            onClick={handleGoogleSignIn}
             className="btn w-full glass group text-white hover:text-brand-primary"
           >
             Continue With Google
