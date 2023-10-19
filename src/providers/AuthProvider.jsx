@@ -23,7 +23,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [profileImage, setProfileImage] = useState('https://i.ibb.co/MVzMp2j/istockphoto-1307140504-612x612.jpg');
   const [loading, setLoading] = useState(true);
-  const [services, setServices] = useState([]);
 
   // register with email
   const createUserWithEmail = (email, password) => {
@@ -75,13 +74,6 @@ const AuthProvider = ({ children }) => {
     }
 }, [])
 
-  //json data of services
-  useEffect(() => {
-    fetch("/data/services.json")
-      .then((response) => response.json())
-      .then((data) => setServices(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
 
   // providing info
   const authInfo = {
@@ -94,7 +86,6 @@ const AuthProvider = ({ children }) => {
     profileImage,
     setProfileImage,
     logOut,
-    services,
   };
 
   return (
