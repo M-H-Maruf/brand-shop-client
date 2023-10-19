@@ -31,7 +31,7 @@ const Auth = () => {
               <div onClick={()=>setTabIndex(1)} className={`p-4 w-full flex justify-center items-center text-3xl font-teko tracking-wide ${tabLogInStyle}`}>Log in</div>
               <div onClick={()=>setTabIndex(0)} className={`p-4 w-full flex justify-center items-center text-3xl font-teko tracking-wide ${tabRegisterStyle}`}>Register</div>
             </div>
-              {tabIndex?<Login></Login>:<Register></Register>}
+              {tabIndex?<Login></Login>:<Register setTabIndex={setTabIndex}></Register>}
               <div className="divider before:bg-white after:bg-white">OR</div>
           <button
             

@@ -1,13 +1,11 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
-const Register = () => {
+const Register = ({setTabIndex}) => {
   const { createUserWithEmail, updateNameAndPhotoUrl } =
     useContext(AuthContext);
 
-  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -18,7 +16,6 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
 
-    
     if (password.length < 6) {
       Swal.fire({
         icon: "error",
@@ -62,7 +59,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 2500,
         });
-        navigate("/");
+        setTabIndex(1)
       })
       .catch((error) => {
         Swal.fire({
@@ -82,7 +79,7 @@ const Register = () => {
           <label className="input-group">
             <span className="bg-brand-primary w-44">Image</span>
             <input
-            name="photo"
+              name="photo"
               type="text"
               placeholder="Your Image URL"
               className="input input-bordered text-brand-primary w-full"
@@ -93,7 +90,7 @@ const Register = () => {
           <label className="input-group">
             <span className="bg-brand-primary w-44">Name</span>
             <input
-            name="name"
+              name="name"
               type="text"
               placeholder="Your Name"
               className="input input-bordered text-brand-primary w-full"
@@ -104,7 +101,7 @@ const Register = () => {
           <label className="input-group">
             <span className="bg-brand-primary w-44">email</span>
             <input
-            name="email"
+              name="email"
               type="email"
               placeholder="Your Email"
               className="input input-bordered text-brand-primary w-full"
@@ -115,8 +112,8 @@ const Register = () => {
           <label className="input-group">
             <span className="bg-brand-primary w-44">Password</span>
             <input
-            name="password"
-              type="text"
+              name="password"
+              type="password"
               placeholder="Your Password"
               className="input input-bordered text-brand-primary w-full"
             />
@@ -124,9 +121,7 @@ const Register = () => {
         </div>
       </div>
       <div className="form-control -mt-6">
-        <button
-          className="btn glass text-white hover:text-brand-primary"
-        >
+        <button className="btn glass text-white hover:text-brand-primary">
           Register
         </button>
       </div>

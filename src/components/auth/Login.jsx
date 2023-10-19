@@ -1,40 +1,125 @@
-
+import { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-    return (
-        <div>
-             <form className="flex flex-col gap-8">
-              <div className="grid justify-center grid-cols-1 items-center gap-6 my-6">
+  const {
+    signInWithEmail,
+  } = useContext(AuthContext);
+  
 
-                <div className="form-control">
-                  <label className="input-group">
-                    <span className="bg-brand-primary w-44">email</span>
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="input input-bordered text-brand-primary w-full"
-                    />
-                  </label>
-                </div>
-                <div className="form-control">
-                  <label className="input-group">
-                    <span className="bg-brand-primary w-44">Password</span>
-                    <input
-                      type="text"
-                      placeholder="Your Password"
-                      className="input input-bordered text-brand-primary w-full"
-                    />
-                  </label>
-                </div>
-              </div>
-              <div className="form-control -mt-6">
-                <button className="btn glass text-white hover:text-brand-primary">
-                  Register
-                </button>
-              </div>
-            </form>
+  const navigate = useNavigate();
+  const location = useLocation();
+
+
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+
+    const email = form.get("email");
+    const password = form.get("password");
+
+    // Password Verification
+    if (password.length < 6) {
+      Swal.fire({
+        icon: "error",
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 2500,
+        text: "Password must be at least 6 characters long",
+      });
+      return;
+    }
+    
+    if (!/[A-Z]/.test(password)) {
+      Swal.fire({
+        icon: "error",
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 2500,
+        text: "Password must contain at least one capital letter",
+      });
+      return;
+    }
+
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      Swal.fire({
+        icon: "error",
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 2500,
+        text: "Password must contain at least one special character",
+      });
+      return;
+    }
+
+    signInWithEmail(email, password)
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Sign In Succeeded",
+          showConfirmButton: false,
+          timer: 2500,
+        });
+        
+        navigate(location?.state ? location.state : '/');
+        
+      })
+      .catch((error) => {
+        let errorSignIn ='';
+        if (error.code == 'auth/invalid-login-credentials') {
+          errorSignIn = "Email or password doesn't match"
+        }
+        else {
+          errorSignIn = error.code;
+        }
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: "Oops! Something went wrong.\n"+ errorSignIn,
+          showConfirmButton: false,
+          timer: 2500,
+        });
+        
+      });
+  };
+  return (
+    <div>
+      <form onSubmit={handleLogIn} className="flex flex-col gap-8">
+        <div className="grid justify-center grid-cols-1 items-center gap-6 my-6">
+          <div className="form-control">
+            <label className="input-group">
+              <span className="bg-brand-primary w-44">email</span>
+              <input
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                className="input input-bordered text-brand-primary w-full"
+              />
+            </label>
+          </div>
+          <div className="form-control">
+            <label className="input-group">
+              <span className="bg-brand-primary w-44">Password</span>
+              <input
+                name="password"
+                type="password"
+                placeholder="Your Password"
+                className="input input-bordered text-brand-primary w-full"
+              />
+            </label>
+          </div>
         </div>
-    );
+        <div className="form-control -mt-6">
+          <button className="btn glass text-white hover:text-brand-primary">
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default Login;
