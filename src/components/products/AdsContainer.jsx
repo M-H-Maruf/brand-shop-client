@@ -1,25 +1,24 @@
-import Tilt from "react-parallax-tilt";
+import { useEffect, useState } from "react";
+
 
 const AdsContainer = () => {
-  const ads = [
-    "https://i.ibb.co/ByQZtp2/google-ad.jpg",
-    "https://i.ibb.co/7CtxNcW/samsung-ad.jpg",
-    "https://i.ibb.co/wsG0gKT/apple-ad.png",
-  ];
+  // retrieving brands data from database
+  const [ads, setAds] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/ads")
+      .then((res) => res.json())
+      .then((data) => setAds(data));
+  }, []);
   return (
-    <div className="flex flex-col gap-6">
+    <div className="carousel w-96 mx-auto">
       {ads.map((ad, idx) => (
-        <div key={idx}>
-          <Tilt scale={1.05}>
-              <div data-aos="flip-left" className="flex justify-center items-center p-4 rounded-t-lg bg-black/10 h-60">
-                <img
-                  className="w-96 rounded-lg object-cover object-center"
-                  src={ad}
-                  alt="service"
-                />
-              </div>
+        <div key={idx} id={`slide${idx+1}`} className="carousel-item relative w-full">
+  <img src={ad.ad} className="w-full" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href={`#slide${idx==0?ads.length:idx}`} className="btn btn-circle glass text-brand-primary">❮</a> 
+      <a href={`#slide${idx==ads.length-1?'1':idx+2}`} className="btn btn-circle glass text-brand-primary">❯</a>
+    </div>
               
-          </Tilt>
         </div>
       ))}
     </div>

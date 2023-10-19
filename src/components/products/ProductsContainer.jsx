@@ -2,7 +2,7 @@ import Tilt from "react-parallax-tilt";
 
 const ProductsContainer = ({ products }) => {
   return (
-    <div className="flex flex-wrap">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
       {products.map((product) => (
         <div key={product._id}>
           <Tilt scale={1.05}>
