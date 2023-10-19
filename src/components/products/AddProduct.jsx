@@ -40,7 +40,7 @@ const AddProduct = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId > 0) {
+        if (data.insertedId) {
           form.image.value = '';
           form.name.value = '';
           form.brand.value = '';

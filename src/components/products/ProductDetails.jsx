@@ -5,6 +5,7 @@ import Particle from "../home/Particle";
 import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
 import Tilt from "react-parallax-tilt";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const { _id } = useParams();
@@ -16,6 +17,47 @@ const ProductDetails = () => {
       .then((data) => setProduct(data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const handleAddToCart = () => {
+    const { image, name, brand, type, price, description, rating, details } =
+      product;
+    const newItem = {
+      image,
+      name,
+      brand,
+      type,
+      price,
+      description,
+      rating,
+      details,
+    };
+
+    fetch("http://localhost:5000/add-to-cart/", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Product Added Successfully!",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        } else {
+          Swal.fire({
+            title: "Error!",
+            text: "Failed To Add Product!",
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        }
+      });
+  };
 
   return (
     <div className=" bg-black/80 bg-[url('https://i.ibb.co/qWNH5fN/Alexandre-debieve-FO7-JIlwj-Ot-U-unsplash.jpg')] bg-cover bg-center bg-blend-darken text-white flex flex-col justify-center items-center tracking-normal text-justify">
@@ -68,10 +110,7 @@ const ProductDetails = () => {
                       Details: {product.details}
                     </h2>
                     <div className="flex gap-4">
-                      <Link
-                        to={`/product-details/${product._id}`}
-                        className="font-bold"
-                      >
+                      <Link onClick={handleAddToCart} className="font-bold">
                         <button className="btn border-2 bg-transparent font-bold my-4 border-brand-primary text-brand-primary hover:bg-brand-primary hover:border-brand-primary hover:text-white">
                           ADD TO CART
                         </button>
