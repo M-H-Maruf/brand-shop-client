@@ -57,7 +57,7 @@ const Navbar = () => {
         <div className="flex justify-center items-center px-4 gap-2">
           <img
             className="h-10 rounded-full w-10 bg-brand-primary hidden md:flex"
-            src="./logo.svg"
+            src="/logo.svg"
             alt="logo"
           />
           <Link

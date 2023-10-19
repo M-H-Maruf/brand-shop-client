@@ -6,7 +6,7 @@ import { TbBrandStrava } from "react-icons/tb";
 
 const SideNav = () => {
   return (
-    <div data-aos='fade-left' className="fixed top-1/2 z-100 right-0 -translate-y-1/2 m-2 bg-black/50 flex flex-col justify-center items-center p-2 py-6 rounded-full gap-6">
+    <div className="fixed top-1/2 z-100 right-0 -translate-y-1/2 m-2 bg-black/50 flex flex-col justify-center items-center p-2 py-6 rounded-full gap-6">
       <div className="tooltip tooltip-left tooltip-warning" data-tip="HOME">
         <Link spy={true} smooth={true} to="Banner">
           <AiTwotoneHome className="text-2xl text-white/40 hover:text-brand-primary"></AiTwotoneHome>

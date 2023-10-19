@@ -2,7 +2,9 @@ import { Helmet } from "react-helmet-async";
 import Particle from "../home/Particle";
 
 const AddProduct = () => {
-  const handleAddProduct = () => {};
+  const handleAddProduct = () => {
+    
+  }
   return (
     <div className=" bg-black/80 bg-[url('https://i.ibb.co/qWNH5fN/Alexandre-debieve-FO7-JIlwj-Ot-U-unsplash.jpg')] bg-cover bg-center bg-blend-darken text-white flex flex-col justify-center items-center tracking-normal text-justify">
       <Helmet>
