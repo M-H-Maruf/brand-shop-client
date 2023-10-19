@@ -5,6 +5,8 @@ import MyCart from "../components/myCart/MyCart";
 import Products from "../components/products/Products";
 import Auth from './../components/auth/Auth';
 import AddProduct from './../components/products/AddProduct';
+import UpdateProduct from "../components/products/UpdateProduct";
+import ProductDetails from "../components/products/ProductDetails";
 
 const routes = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const routes = createBrowserRouter([
       {
         path: "/add-product",
         element: <AddProduct></AddProduct>,
+      },
+      {
+        path: "/update-product/:_id",
+        element: <UpdateProduct></UpdateProduct>,
+      },
+      {
+        path: "/product-details/:_id",
+        element: <ProductDetails></ProductDetails>,
       },
       {
         path: "/auth",

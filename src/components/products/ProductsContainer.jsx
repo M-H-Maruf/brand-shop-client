@@ -36,16 +36,22 @@ const ProductsContainer = ({ products }) => {
                   Rating: {product.rating}
                 </h2>
                 <div className="flex gap-4">
-                <Link to="/product-details" className="font-bold">
-          <button className="btn border-2 bg-transparent font-bold my-4 border-brand-primary text-brand-primary hover:bg-brand-primary hover:border-brand-primary hover:text-white">
-          <AiOutlineInfoCircle className="text-3xl"></AiOutlineInfoCircle>
-          </button>
-        </Link>
-        <Link to="/update-product" className="font-bold">
-          <button className="btn border-2 bg-transparent font-bold my-4 border-brand-primary text-brand-primary hover:bg-brand-primary hover:border-brand-primary hover:text-white">
-          <AiOutlineEdit className="text-3xl"></AiOutlineEdit>
-          </button>
-        </Link>
+                  <Link
+                    to={`/product-details/${product._id}`}
+                    className="font-bold"
+                  >
+                    <button className="btn border-2 bg-transparent font-bold my-4 border-brand-primary text-brand-primary hover:bg-brand-primary hover:border-brand-primary hover:text-white">
+                      <AiOutlineInfoCircle className="text-3xl"></AiOutlineInfoCircle>
+                    </button>
+                  </Link>
+                  <Link
+                    to={`/update-product/${product._id}`}
+                    className="font-bold"
+                  >
+                    <button className="btn border-2 bg-transparent font-bold my-4 border-brand-primary text-brand-primary hover:bg-brand-primary hover:border-brand-primary hover:text-white">
+                      <AiOutlineEdit className="text-3xl"></AiOutlineEdit>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
