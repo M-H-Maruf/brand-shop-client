@@ -16,7 +16,7 @@ const Brands = () => {
   return (
     <div
       data-aos="zoom-in"
-      className={`tracking-tight md:py-32 space-y-10 bg-white lg:p-32 py-16 px-4 rounded-2xl my-32 ${isDarkMode?"bg-black/90":"bg-black/10"}`}
+      className={`tracking-tight md:py-32 space-y-10 lg:p-32 py-16 px-4 rounded-2xl my-32 ${isDarkMode?"bg-black/90":"bg-black/10"}`}
     >
       <h1
         data-aos="fade-right"
