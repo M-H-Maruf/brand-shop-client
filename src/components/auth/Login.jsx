@@ -114,7 +114,7 @@ const Login = () => {
         </div>
         <div className="form-control -mt-6">
           <button className="btn glass text-white hover:text-brand-primary">
-            Register
+            Log in
           </button>
         </div>
       </form>

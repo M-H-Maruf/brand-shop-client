@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <div className={`font-mukta tracking-widest relative ${isDarkMode?"bg-black/95":"bg-black/10"}`}>
-      {console.log(isDarkMode)}
+    
       {/* navbar */}
       <Navbar></Navbar>
 
