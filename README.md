@@ -23,8 +23,10 @@ This website offers
 - Attractive typing effect with react typing effect.
 - Cool toasts to interact with users.
 - Dropdown responsive menu and user info.
+- Responsive layout.
 - Background overlays and amazing positoning of components.
 - Amazing parallax background.
+- Light/Dark theme for home.
 - Parallax tilt cards.
 - dynamic title.
 - sustainable backend server.
