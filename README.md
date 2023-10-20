@@ -1,8 +1,35 @@
-# React + Vite
+# [NEXUS](https://brand-shop-client-d55a1.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This repository contains the source code for a company named NEXUS that deals tech products from brands like Google, Microsoft, Apple, Samsung, Sony, Intel etc.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Features
+
+This website offers
+
+- A stunning UI and user friendly UX.
+- Firebase authentication with email and google.
+- Interactive particle animation made with tsparticle.
+- Fully functional cart connected with data base.
+- Amazing animations made with framer motion.
+- Smooth scrolling with react scroll.
+- Beautiful transitions on scroll with AOS.
+- Dynamic website using react router.
+- Beautiful products page to show off your resources.
+- Private add product, update product, product details, cart to maintain security against business rivals.
+- Smooth log in and register functionality.
+- Compatible with phone, tab, laptop, desktop etc.
+- Attractive typing effect with react typing effect.
+- Cool toasts to interact with users.
+- Dropdown responsive menu and user info.
+- Background overlays and amazing positoning of components.
+- Amazing parallax background.
+- Parallax tilt cards.
+- dynamic title.
+- sustainable backend server.
+- Separate data from database to make the website more adaptable.
+- Intuitive names to make the source code more readable.
+- Amazing vertical secondary navbar to navigate through the home page with tooltips.
+
+
