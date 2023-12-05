@@ -8,18 +8,15 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SideNav = () => {
-  const {isDarkMode, setIsDarkMode} = useContext(AuthContext);
+  const { isDarkMode, setIsDarkMode } = useContext(AuthContext);
   return (
     <div className="fixed top-1/2 z-100 right-0 -translate-y-1/2 m-2 bg-black/50 flex flex-col justify-center items-center p-2 py-6 pt-11 rounded-full gap-6">
       <div
         className="tooltip rotate-90 mb-3 tooltip-left tooltip-warning flex justify-center items-center"
         data-tip="MODE-TOGGLE"
-        onClick={()=>setIsDarkMode(!isDarkMode)}
+        onClick={() => setIsDarkMode(!isDarkMode)}
       >
-        <DarkModeToggle
-            checked={isDarkMode}
-            size={60}
-          />
+        <DarkModeToggle checked={isDarkMode} size={60} />
       </div>
       <div className="tooltip tooltip-left tooltip-warning" data-tip="HOME">
         <Link spy={true} smooth={true} to="Banner">
@@ -31,10 +28,7 @@ const SideNav = () => {
           <TbBrandStrava className="text-2xl text-white/40 hover:text-brand-primary"></TbBrandStrava>
         </Link>
       </div>
-      <div
-        className="tooltip tooltip-left tooltip-warning"
-        data-tip="TESTIMONIALS"
-      >
+      <div className="tooltip tooltip-left tooltip-warning" data-tip="TESTIMONIALS">
         <Link spy={true} smooth={true} to="Testimonials">
           <FaNoteSticky className="text-2xl text-white/40 hover:text-brand-primary"></FaNoteSticky>
         </Link>

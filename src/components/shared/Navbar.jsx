@@ -34,7 +34,7 @@ const Navbar = () => {
 
   // active route styling
   const activeLink =
-    "text-donation-primary font-bold underline decoration-2 underline-offset-4";
+    "text-brand-primary font-bold underline decoration-2 underline-offset-4";
 
   // navbar routes
   const navLinks = (

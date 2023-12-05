@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "brand-shop-client-d55a1"
-  }
+    "default": "brand-shop-client-d55a1",
+    "staging": "brand-shop-client-d55a1"
+  },
+  "targets": {},
+  "etags": {}
 }
